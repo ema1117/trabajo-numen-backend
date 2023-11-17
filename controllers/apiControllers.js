@@ -1,4 +1,5 @@
 const {Mascota} = require('../db/models/Mascotas') 
+const axios = require('axios')
 
 const apiController = {
 
@@ -40,14 +41,10 @@ const apiController = {
     
     //ver api externa, trae los 10 primeros poquemones
     async apiExterna(req,res){        
-            await fetch(`https://pokeapi.co/api/v2/pokemon?limit=10`)
-            .then(response => response.json())
-            .then(data => {
+            const {data} = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=10`)            
+                        
                  return res.json(data)
-            }).catch(error => {
-                console.log(error);
-            })
-                
+           
     } 
 } 
 
