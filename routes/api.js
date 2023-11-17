@@ -22,7 +22,7 @@ router.put('/editarMascota/:id',validarID,checks,validarChecks,apiController.api
 //borrar una mascota
 router.delete('/borrarMascota/:id',validarID,apiController.apiDelete)
 
-//ver una api externa, en este caso la pokeapi, trae 
+//ver una api externa, en este caso la pokeapi, trae las 10 primeros pokemons
 router.get('/verApi',apiController.apiExterna)
 
 
